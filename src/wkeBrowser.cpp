@@ -8,7 +8,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include "Resource.h"
-#include "../wkedefine.h"
+#include "../wke.h"
 #include "RenderGDI.h"
 
 #include <windows.h>

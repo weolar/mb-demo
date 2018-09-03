@@ -32,7 +32,7 @@ distribution.
 #include <windowsx.h>
 #include <xstring>
 #include <vector>
-#include "../wkedefine.h"
+#include "../wke.h"
 
 #pragma comment(lib, "shell32.lib")
 #pragma comment(lib, "shlwapi.lib")
@@ -144,7 +144,7 @@ std::wstring getResourcesPath(const std::wstring& name)
 
     result = temp + name;
     if (!::PathFileExists(result.c_str())) {
-        result = temp + L"..\\src\\";
+        result = temp + L"..\\";
         result += name;
     }
     return result;
@@ -431,7 +431,7 @@ int WINAPI wWinMain(
 
     ::PathAppendW(&mbPath[0], L"node.dll");
     if (!::PathFileExists(&mbPath[0])) {
-        ::PathAppendW(&tempPath[0], L"..\\");
+        ::PathAppendW(&tempPath[0], L"..\\..\\");
         mbPath = tempPath;
         ::PathAppendW(&mbPath[0], L"node.dll");
         if (!::PathFileExists(&mbPath[0])) {
